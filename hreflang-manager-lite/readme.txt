@@ -1,9 +1,9 @@
-=== Hreflang Manager ===
+=== Hreflang Manager - Hreflang Implementation for International SEO ===
 Contributors: DAEXT
-Tags: hreflang, seo, language, country, region, international seo, multilingual, internationalization, hreflang plugin, translate, i18n, localization
+Tags: hreflang, seo, language, internationalization, multilingual
 Donate link: https://daext.com
 Requires at least: 4.0
-Tested up to: 6.5.4
+Tested up to: 6.6.2
 Requires PHP: 5.2
 Stable tag: 1.10
 License: GPLv3
