@@ -39,11 +39,8 @@ class Daexthrmal_Shared {
 	 */
 	private function __construct() {
 
-		// Set plugin textdomain.
-		load_plugin_textdomain( 'hreflang-manager-lite', false, 'hreflang-manager-lite/lang/' );
-
 		$this->data['slug'] = 'daexthrmal';
-		$this->data['ver']  = '1.10';
+		$this->data['ver']  = '1.11';
 		$this->data['dir']  = substr( plugin_dir_path( __FILE__ ), 0, -7 );
 		$this->data['url']  = substr( plugin_dir_url( __FILE__ ), 0, -7 );
 
