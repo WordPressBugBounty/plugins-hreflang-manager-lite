@@ -76,10 +76,35 @@ class Daexthrmal_Admin {
 		// Fires before a post is sent to the trash.
 		add_action( 'wp_trash_post', array( $this, 'delete_post_connection' ) );
 
-	    // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce non-necessary for menu selection.
+		// Require and instantiate the related classes used to handle the menus.
+		add_action( 'init', array( $this, 'handle_menus' ) );
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @return self|null
+	 */
+	public static function get_instance() {
+
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+	/**
+	 * If we are in one of the plugin back-end menus require and instantiate the related class used to handle the menu.
+	 *
+	 * @return void
+	 */
+	public function handle_menus() {
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce non-necessary for menu selection.
 		$page_query_param = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : null;
 
-		// Require and instantiate the class used to register the menu options.
+		// Require and instantiate the class used to handle the current menu.
 		if ( null !== $page_query_param ) {
 
 			$config = array(
@@ -156,20 +181,7 @@ class Daexthrmal_Admin {
 				$this->menu_elements = new Daexthrmal_Options_Menu_Elements( $this->shared, $page_query_param, $config );
 			}
 		}
-	}
 
-	/**
-	 * Return an instance of this class.
-	 *
-	 * @return self|null
-	 */
-	public static function get_instance() {
-
-		if ( null === self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
 	}
 
 	/**
