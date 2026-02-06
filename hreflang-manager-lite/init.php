@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Hreflang Manager
  * Description: Set language and regional URL for better SEO performance. (Lite Version)
- * Version: 1.12
+ * Version: 1.13
  * Author: DAEXT
  * Author URI: https://daext.com
  * Text Domain: hreflang-manager-lite

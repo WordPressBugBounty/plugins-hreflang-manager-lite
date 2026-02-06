@@ -132,32 +132,42 @@ class Daexthrmal_Admin {
 					'more_items' => array(
 						array(
 							'link_text' => __( 'Bulk Import', 'hreflang-manager-lite' ),
-							'link_url'  => 'https://daext.com/hreflang-manager/',
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),
 						array(
-							'link_text' => __( 'Sync', 'hreflang-manager-lite' ),
-							'link_url'  => 'https://daext.com/hreflang-manager/',
+							'link_text' => __( 'Network Sync', 'hreflang-manager-lite' ),
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),
 						array(
 							'link_text' => __( 'Editor Integration', 'hreflang-manager-lite' ),
-							'link_url'  => 'https://daext.com/hreflang-manager/',
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),
 						array(
 							'link_text' => __( 'Import & Export', 'hreflang-manager-lite' ),
-							'link_url'  => 'https://daext.com/hreflang-manager/',
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
+							'pro_badge' => true,
+						),
+						array(
+							'link_text' => __( 'Locale Selector', 'hreflang-manager-lite' ),
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
+							'pro_badge' => true,
+						),
+						array(
+							'link_text' => __( 'Hreflang Checker', 'hreflang-manager-lite' ),
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),
 						array(
 							'link_text' => __( 'Maintenance Tasks', 'hreflang-manager-lite' ),
-							'link_url'  => 'https://daext.com/hreflang-manager/',
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),
 						array(
 							'link_text' => __( 'Configure Capabilities', 'hreflang-manager-lite' ),
-							'link_url'  => 'https://daext.com/hreflang-manager/',
+							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),
 					),

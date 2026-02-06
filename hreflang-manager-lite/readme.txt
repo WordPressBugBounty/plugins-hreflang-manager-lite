@@ -3,9 +3,9 @@ Contributors: DAEXT
 Tags: hreflang, seo, language, internationalization, multilingual
 Donate link: https://daext.com
 Requires at least: 4.0
-Tested up to: 6.8
+Tested up to: 6.8.3
 Requires PHP: 5.2
-Stable tag: 1.12
+Stable tag: 1.13
 License: GPLv3
 
 The Hreflang Manager plugin provides you an easy and reliable method to implement hreflang in WordPress.
@@ -63,6 +63,12 @@ With this procedure you will be able to perform a **Single Site Activation** in 
 3. Click on the **Activate** button (just below the name of the plugin)
 
 == Changelog ==
+
+= 1.13 =
+
+*October 16, 2025*
+
+* The Log feature has been renamed to Tag Inspector, featuring an improved interface.
 
 = 1.12 =
 
