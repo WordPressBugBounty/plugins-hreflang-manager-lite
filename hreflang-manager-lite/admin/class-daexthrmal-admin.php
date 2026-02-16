@@ -147,7 +147,7 @@ class Daexthrmal_Admin {
 							'pro_badge' => true,
 						),
 						array(
-							'link_text' => __( 'Editor Integration', 'hreflang-manager-lite' ),
+							'link_text' => __( 'XML Sitemap', 'hreflang-manager-lite' ),
 							'link_url'  => 'https://daext.com/hreflang-manager/#features',
 							'pro_badge' => true,
 						),

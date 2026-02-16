@@ -5,7 +5,7 @@ Donate link: https://daext.com
 Requires at least: 4.0
 Tested up to: 6.9.1
 Requires PHP: 5.2
-Stable tag: 1.14
+Stable tag: 1.15
 License: GPLv3
 
 The Hreflang Manager plugin provides you an easy and reliable method to implement hreflang in WordPress.
@@ -64,11 +64,17 @@ With this procedure you will be able to perform a **Single Site Activation** in 
 
 == Changelog ==
 
+= 1.15 =
+
+*February 16, 2026*
+
+* Updated Pro Version feature labels in the admin toolbar.
+
 = 1.14 =
 
 *February 16, 2026*
 
-* Added new interfaces for adding and managing Hreflang data in both the Block Editor (via a dedicated sidebar) and the Classic or non-standard editors (via a dedicated meta box).
+* Added new interfaces for adding and managing hreflang data in both the Block Editor (via a dedicated sidebar) and the Classic or non-standard editors (via a dedicated meta box).
 
 = 1.13 =
 
