@@ -242,17 +242,6 @@ class Daexthrmal_Admin {
 
 		if ( in_array( $screen->id, $meta_box_post_types_a, true ) ) {
 			wp_enqueue_style( $this->shared->get( 'slug' ) . '-meta-box', $this->shared->get( 'url' ) . 'admin/assets/css/meta-box.css', array(), $this->shared->get( 'ver' ) );
-
-			// Select2.
-			wp_enqueue_style(
-				$this->shared->get( 'slug' ) . '-select2',
-				$this->shared->get( 'url' ) . 'admin/assets/inc/select2/css/select2.min.css',
-				array(),
-				$this->shared->get( 'ver' )
-			);
-
-			wp_enqueue_style( $this->shared->get( 'slug' ) . '-select2-custom', $this->shared->get( 'url' ) . 'admin/assets/css/select2-custom.css', array(), $this->shared->get( 'ver' ) );
-
 		}
 	}
 
@@ -319,20 +308,6 @@ class Daexthrmal_Admin {
 
 		}
 
-		$meta_box_post_types_a = $this->shared->get_post_types_with_ui();
-
-		if ( in_array( $screen->id, $meta_box_post_types_a, true ) ) {
-
-			wp_enqueue_script(
-				$this->shared->get( 'slug' ) . '-select2',
-				$this->shared->get( 'url' ) . 'admin/assets/inc/select2/js/select2.min.js',
-				array( 'jquery' ),
-				$this->shared->get( 'ver' ),
-				true
-			);
-
-			wp_enqueue_script( $this->shared->get( 'slug' ) . '-meta-box', $this->shared->get( 'url' ) . 'admin/assets/js/meta-box.js', array( 'jquery', $this->shared->get( 'slug' ) . '-select2' ), $this->shared->get( 'ver' ), true );
-		}
 	}
 
 	/**
@@ -661,25 +636,7 @@ class Daexthrmal_Admin {
 
 		?>
 
-		<table class="form-table daexthrmal-table-hreflang-manager">
-
-			<tbody>
-
 			<?php
-
-			/**
-			 * Activate the 'disabled="disabled"' attribute when the post status is not:
-			 *  - publish
-			 *  - future
-			 *  - pending
-			 *  - private
-			 */
-			$post_status = get_post_status();
-			if ( 'publish' !== $post_status && 'future' !== $post_status && 'pending' !== $post_status && 'private' !== $post_status ) {
-				$input_disabled = 'disabled';
-			} else {
-				$input_disabled = '';
-			}
 
 			/**
 			 * Look for a connection that has as a url_to_connect value the permalink value of this post
@@ -710,17 +667,25 @@ class Daexthrmal_Admin {
 
 					?>
 
+					<div class="daexthrmal-metabox-single-connection">
+
 					<!-- url -->
-					<tr valign="top">
-						<th scope="row"><label for="url<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'URL', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td><input autocomplete="off" <?php echo esc_attr( $input_disabled ); ?> type="text" id="url<?php echo esc_attr( $i ); ?>" maxlength="2083" name="url<?php echo esc_attr( $i ); ?>" class="regular-text daexthrmal-url"/></td>
-					</tr>
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="url<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'URL', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
+							<input autocomplete="off" type="text" id="url<?php echo esc_attr( $i ); ?>" maxlength="2083" name="url<?php echo esc_attr( $i ); ?>" class="regular-text daexthrmal-url"/>
+						</div>
+					</div>
 
 					<!-- Language -->
-					<tr valign="top">
-						<th scope="row"><label for="language<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Language', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td>
-							<select <?php echo esc_attr( $input_disabled ); ?> id="language<?php echo esc_attr( $i ); ?>" class="daexthrmal-language" name="language<?php echo esc_attr( $i ); ?>">
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="language<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Language', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
+							<select id="language<?php echo esc_attr( $i ); ?>" class="daexthrmal-language" name="language<?php echo esc_attr( $i ); ?>">
 								<?php
 
 								$array_language = get_option( 'daexthrmal_language' );
@@ -730,14 +695,16 @@ class Daexthrmal_Admin {
 
 								?>
 							</select>
-						</td>
-					</tr>
+						</div>
+					</div>
 
 					<!-- Script -->
-					<tr valign="top">
-						<th scope="row"><label for="script<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Script', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td>
-							<select <?php echo esc_attr( $input_disabled ); ?> id="script<?php echo esc_attr( $i ); ?>" class="daexthrmal-script" name="script<?php echo esc_attr( $i ); ?>">
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="script<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Script', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
+							<select id="script<?php echo esc_attr( $i ); ?>" class="daexthrmal-script" name="script<?php echo esc_attr( $i ); ?>">
 								<option value=""><?php esc_html_e( 'Not Assigned', 'hreflang-manager-lite' ); ?></option>
 								<?php
 
@@ -748,14 +715,16 @@ class Daexthrmal_Admin {
 
 								?>
 							</select>
-						</td>
-					</tr>
+						</div>
+					</div>
 
 					<!-- Locale -->
-					<tr valign="top">
-						<th scope="row"><label for="locale<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Locale', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td>
-							<select <?php echo esc_attr( $input_disabled ); ?> id="locale<?php echo esc_attr( $i ); ?>" class="daexthrmal-locale" name="locale<?php echo esc_attr( $i ); ?>">
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="locale<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Locale', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
+							<select id="locale<?php echo esc_attr( $i ); ?>" class="daexthrmal-locale" name="locale<?php echo esc_attr( $i ); ?>">
 								<option value=""><?php esc_html_e( 'Not Assigned', 'hreflang-manager-lite' ); ?></option>
 								<?php
 
@@ -766,8 +735,10 @@ class Daexthrmal_Admin {
 
 								?>
 							</select>
-						</td>
-					</tr>
+						</div>
+					</div>
+
+					</div>
 
 					<?php
 
@@ -779,17 +750,24 @@ class Daexthrmal_Admin {
 
 					?>
 
-					<!-- url -->
-					<tr valign="top">
-						<th scope="row"><label for="url<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'URL', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td><input autocomplete="off" type="text" value="<?php echo esc_attr( stripslashes( $permalink_connections->{'url' .$i} ) ); ?>" id="url<?php echo esc_attr( $i ); ?>" maxlength="2083" name="url<?php echo esc_attr( $i ); ?>" class="regular-text daexthrmal-url"/></td>
+					<div class="daexthrmal-metabox-single-connection">
 
-					</tr>
+					<!-- url -->
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="url<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'URL', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
+							<input autocomplete="off" type="text" value="<?php echo esc_attr( stripslashes( $permalink_connections->{'url' .$i} ) ); ?>" id="url<?php echo esc_attr( $i ); ?>" maxlength="2083" name="url<?php echo esc_attr( $i ); ?>" class="regular-text daexthrmal-url"/>
+						</div>
+					</div>
 
 					<!-- Language <?php echo intval( $i, 10 ); ?> -->
-					<tr valign="top">
-						<th scope="row"><label for="language<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Language', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td>
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="language<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Language', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
 							<select id="language<?php echo esc_attr( $i ); ?>" class="daexthrmal-language" name="language<?php echo esc_attr( $i ); ?>">
 								<?php
 
@@ -800,13 +778,15 @@ class Daexthrmal_Admin {
 
 								?>
 							</select>
-						</td>
-					</tr>
+						</div>
+					</div>
 
 					<!-- Script <?php echo intval( $i, 10 ); ?> -->
-					<tr valign="top">
-						<th scope="row"><label for="script<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Script', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td>
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="script<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Script', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
 							<select id="script<?php echo esc_attr( $i ); ?>" class="daexthrmal-script" name="script<?php echo esc_attr( $i ); ?>">
 								<option value=""><?php esc_html_e( 'Not Assigned', 'hreflang-manager-lite' ); ?></option>
 								<?php
@@ -818,13 +798,15 @@ class Daexthrmal_Admin {
 
 								?>
 							</select>
-						</td>
-					</tr>
+						</div>
+					</div>
 
 					<!-- Locale <?php echo intval( $i, 10 ); ?> -->
-					<tr valign="top">
-						<th scope="row"><label for="locale<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Locale', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label></th>
-						<td>
+					<div class="daexthrmal-field">
+						<div class="daexthrmal-label">
+							<label for="locale<?php echo esc_attr( $i ); ?>"><?php esc_html_e( 'Locale', 'hreflang-manager-lite' ); ?> <?php echo esc_html( $i ); ?></label>
+						</div>
+						<div class="daexthrmal-input">
 							<select id="locale<?php echo esc_attr( $i ); ?>" class="daexthrmal-locale" name="locale<?php echo esc_attr( $i ); ?>">
 								<option value=""><?php esc_html_e( 'Not Assigned', 'hreflang-manager-lite' ); ?></option>
 								<?php
@@ -836,8 +818,10 @@ class Daexthrmal_Admin {
 
 								?>
 							</select>
-						</td>
-					</tr>
+						</div>
+					</div>
+
+					</div>
 
 					<?php
 
@@ -845,10 +829,6 @@ class Daexthrmal_Admin {
 			}
 
 		?>
-
-		</tbody>
-
-		</table>
 
 		<?php
 
@@ -892,17 +872,6 @@ class Daexthrmal_Admin {
 		}
 
 		/* - end security verification - */
-
-		/*
-		 * Return ( do not save ) if the post status is not:
-		 * - publish
-		 * - future
-		 * - pending
-		 * - private
-		 */
-		$post_status = get_post_status();
-		if ( 'publish' !== $post_status && 'future' !== $post_status && 'pending' !== $post_status && 'private' !== $post_status ) {
-			return;}
 
 		// Init vars.
 		$url      = array();

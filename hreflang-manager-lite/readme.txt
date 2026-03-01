@@ -5,7 +5,7 @@ Donate link: https://daext.com
 Requires at least: 4.0
 Tested up to: 6.9.1
 Requires PHP: 5.2
-Stable tag: 1.15
+Stable tag: 1.16
 License: GPLv3
 
 The Hreflang Manager plugin provides you an easy and reliable method to implement hreflang in WordPress.
@@ -63,6 +63,13 @@ With this procedure you will be able to perform a **Single Site Activation** in 
 3. Click on the **Activate** button (just below the name of the plugin)
 
 == Changelog ==
+
+= 1.16 =
+
+*March 1, 2026*
+
+* The style of the post editor meta box has been updated for improved consistency with the native classic editor interface. In addition, the Select2 library is no longer used for select elements, as these have been replaced with native HTML select fields.
+* Additional minor functional improvements to the post editor meta box.
 
 = 1.15 =
 
