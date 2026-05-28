@@ -177,6 +177,7 @@ const CardBody = (props) => {
                             initialPosition={Number(props.formData[option.name])}
                             help={option.help}
                             trackColor={'#8D1E77'}
+                            __next40pxDefaultSize={true}
                         />
                       </div>
                       <div className={'option-container-right'}>

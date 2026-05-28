@@ -3,9 +3,9 @@ Contributors: DAEXT
 Tags: hreflang, seo, language, internationalization, multilingual
 Donate link: https://daext.com
 Requires at least: 4.0
-Tested up to: 6.9.4
+Tested up to: 7.0
 Requires PHP: 5.2
-Stable tag: 1.18
+Stable tag: 1.19
 License: GPLv3
 
 The Hreflang Manager plugin provides you an easy and reliable method to implement hreflang in WordPress.
@@ -61,6 +61,14 @@ Go to **Hreflang → Options** and enable the Tag Inspector option. Then visit y
 For detailed guidance and advanced configuration, visit the [official Knowledge Base](https://daext.com/kb/hreflang-manager/).
 
 == Changelog ==
+
+= 1.19 =
+
+*May 28, 2026*
+
+* Fixed style inconsistencies introduced with WordPress 7.0.
+* Updated the admin UI color palette to use branded colors instead of the default WordPress colors.
+* Added a custom admin footer in place of the default WordPress footer text.
 
 = 1.18 =
 

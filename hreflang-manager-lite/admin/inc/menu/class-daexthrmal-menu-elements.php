@@ -369,7 +369,7 @@ class Daexthrmal_Menu_Elements {
 							</select>
 							<?php wp_nonce_field( 'daexthrmal_bulk_action_' . $this->menu_slug, 'daexthrmal_bulk_action_' . $this->menu_slug . '_nonce' ); ?>
 							<input id="bulk-action-selected-items" type="hidden" name="bulk-action-selected-items" value="">
-							<input id="daexthrmal-submit-bulk-action" type="submit" class="button daexthrmal-admin-page-button" value="<?php esc_html_e( 'Apply', 'hreflang-manager-lite' ); ?>">
+							<input id="daexthrmal-submit-bulk-action" type="submit" class="daexthrmal-admin-page-button" value="<?php esc_html_e( 'Apply', 'hreflang-manager-lite' ); ?>">
 						</form>
 					</div>
 
@@ -1527,7 +1527,7 @@ class Daexthrmal_Menu_Elements {
 					<input type="hidden" name="page" value="daexthrmal_<?php echo esc_attr( $this->slug_plural ); ?>">
 					<input class="daexthrmal-crud-table-search-form__post-search-input" type="text" name="s"
 							value="<?php echo null !== $post_search_input ? esc_attr( stripslashes( $post_search_input ) ) : ''; ?>" autocomplete="off" maxlength="255">
-					<input class="button daexthrmal-admin-page-button" type="submit" value="Search <?php echo esc_attr( $this->label_plural ); ?>">
+					<input class="daexthrmal-admin-page-button" type="submit" value="Search <?php echo esc_attr( $this->label_plural ); ?>">
 
 				</div>
 
