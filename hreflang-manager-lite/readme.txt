@@ -2,9 +2,9 @@
 Contributors: DAEXT
 Tags: hreflang, seo, language, internationalization, multilingual
 Donate link: https://daext.com
-Requires at least: 4.0
-Tested up to: 7.0
-Requires PHP: 5.2
+Requires at least: 6.2
+Tested up to: 7.1
+Requires PHP: 7.4
 Stable tag: 1.19
 License: GPLv3
 
