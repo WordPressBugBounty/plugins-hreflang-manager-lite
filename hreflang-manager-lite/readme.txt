@@ -5,7 +5,7 @@ Donate link: https://daext.com
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.19
+Stable tag: 1.20
 License: GPLv3
 
 The Hreflang Manager plugin provides you an easy and reliable method to implement hreflang in WordPress.
@@ -61,6 +61,12 @@ Go to **Hreflang → Options** and enable the Tag Inspector option. Then visit y
 For detailed guidance and advanced configuration, visit the [official Knowledge Base](https://daext.com/kb/hreflang-manager/).
 
 == Changelog ==
+
+= 1.20 =
+
+*October 27, 2026*
+
+* Fixed a PHP warning displayed in the Connections menu on servers with output buffering disabled.
 
 = 1.19 =
 

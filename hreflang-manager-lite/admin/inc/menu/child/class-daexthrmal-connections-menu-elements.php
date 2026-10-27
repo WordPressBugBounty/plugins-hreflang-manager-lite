@@ -77,12 +77,6 @@ class Daexthrmal_Connections_Menu_Elements extends Daexthrmal_Menu_Elements {
 
 		}
 
-		?>
-
-		<!-- process data -->
-
-		<?php
-
 		// Initialize variables ---------------------------------------------------------------------------------------.
 
 		// Save the connection into the database.
